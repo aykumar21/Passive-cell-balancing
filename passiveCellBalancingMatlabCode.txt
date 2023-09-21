@@ -1,0 +1,65 @@
+function [y1, y2, y3]= fcn(s1, s2, s3)
+s1 = int16(s1);
+s2 = int16(s2);
+s3 = int16(s3);
+
+a = min([s1 s2 s3]);
+if(s1 == a)
+    if (s1 == a && s2 == a)
+        y1 = 0;
+        y2 = 0;
+        y3 = 1;
+    elseif (s1 == a && s3 == a)
+        y1 = 0;
+        y2 = 1;
+        y3 = 0;
+    elseif (s1 == a)
+        y1 = 0;
+        y2 = 1;
+        y3 = 1;
+    else 
+        y1 = 0;
+        y2 = 0;
+        y3 = 0;
+    end
+elseif(s2==a)
+    if(s2==a && s3==a)
+        y1 = 1;
+        y2 = 0;
+        y3 = 0;
+    elseif (s2 == a && s1 == a)
+        y1 = 0;
+        y2 = 0;
+        y3 = 1;
+    elseif (s2 == a)
+        y1 = 1;
+        y2 = 0;
+        y3 = 1;
+    else 
+        y1 = 0;
+        y2 = 0;
+        y3 = 0;
+    end
+elseif(s3==a)
+    if(s3==a && s2==a)
+        y1 = 1;
+        y2 = 0;
+        y3 = 0;
+    elseif (s3 == a && s1 == a)
+        y1 = 0;
+        y2 = 1;
+        y3 = 0;
+    elseif (s3 == a)
+        y1 = 1;
+        y2 = 1;
+        y3 = 0;
+    else 
+        y1 = 0;
+        y2 = 0;
+        y3 = 0;
+    end
+else
+    y1 = 0;
+    y2 = 0;
+    y3 = 0;
+end
